@@ -1,0 +1,18 @@
+{{ define "main" }}
+<header class="article-header">
+  <a href="/" class="home-link"><span class="accent">mechoblast</span>.github.io</a>
+</header>
+<div class="article-container">
+  <h1>{{ .Title }}</h1>
+  <div class="byline">
+    <div class="date-published">{{ .Date.Format "January 2, 2006" }}</div>
+    {{ with .Params.authors }}<div class="authors">{{ . }}</div>{{ end }}
+    <div class="article-body">
+      {{ .Content }}
+    </div>
+  </div>
+  <div class="back-link">
+    <a href="/">&larr; Back to all articles</a>
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="container">
+  <h1 style="line-height: 1.2em"><span class="accent">mechoblast</span>.github.io</h1>
+  <h2>Articles</h2>
+
+  <div class="toc">
+    {{- $pages := where .Site.RegularPages "Section" "posts" -}}
+    {{- $grouped := $pages.GroupByDate "January 2006" -}}
+    {{- range $grouped }}
+    <div class="date">{{ .Key }}</div>
+    {{- range .Pages }}
+    <a href="{{ .RelPermalink }}" class="note">
+      <h3>{{ .Title }}</h3>
+      <div class="description">{{ .Description | default .Summary | plainify | truncate 300 }}</div>
+    </a>
+    {{- end }}
+    {{- end }}
+  </div>
+
+</div>
+{{ end }}

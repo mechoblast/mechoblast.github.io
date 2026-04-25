@@ -1,0 +1,13 @@
+baseURL = "https://mechoblast.github.io/"
+languageCode = "en-us"
+title = "mechoblast.github.io"
+
+[params]
+  description = "Blog for inspiration."
+  siteColor = "#0066cc"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[pagination]
+  pagerSize = 20
